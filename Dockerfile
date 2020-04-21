@@ -27,6 +27,8 @@ RUN set -ex; \
     gpg --keyserver hkps://hkps.pool.sks-keyservers.net --recv-key 950CAAED148E99B5; \
     gpg --verify "gdnsd-$GDNSD_VERSION.tar.xz.asc" "gdnsd-$GDNSD_VERSION.tar.xz"; \
     rm "gdnsd-$GDNSD_VERSION.tar.xz.asc"; \
+    mkdir "gdnsd-$GDNSD_VERSION"; \
+    chown gdnsd:gdnsd "gdnsd-$GDNSD_VERSION"; \
     su-exec gdnsd:gdnsd tar -xof "gdnsd-$GDNSD_VERSION.tar.xz"; \
     rm "gdnsd-$GDNSD_VERSION.tar.xz"; \
     cd "gdnsd-$GDNSD_VERSION"; \
