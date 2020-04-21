@@ -18,7 +18,7 @@ RUN set -ex; \
         make \
         perl \
         ragel \
-        userspace-rcu-dev
+        userspace-rcu-dev \
     ; \
     mkdir /usr/src; \
     cd /usr/src; \
